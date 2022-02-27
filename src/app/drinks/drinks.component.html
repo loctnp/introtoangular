@@ -1,0 +1,38 @@
+<h3>List of drinks</h3>
+<!-- <ul>
+    <li *ngFor="let d of drinks">
+        {{d.name}}
+    </li>
+</ul> -->
+<div *ngIf="errMsg">
+    Error: {{errMsg}}
+</div>
+<label *ngFor="let d of drinks">
+    <input type="radio" name="drink" [(ngModel)]="drinkid" value="{{d.id}}">
+    {{d.name}}
+</label>
+<p *ngIf="drinkid" style="color: green;">
+    You selected: {{drinks[drinkid-1].name}} - Price: {{drinks[drinkid-1].price}} 
+</p>
+<h3>To-do list</h3>
+<label>
+    Input user id:
+    <input type="text" name="userid" [(ngModel)]="userid">
+</label>
+<table border="1" width="100%">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let t of links">
+        <td>{{t.id}}</td>
+        <td>{{t.title}}</td>
+        <td *ngIf="t.completed; else view2" style="color: white; background: darkgreen;">
+            Done
+        </td>
+        <ng-template #view2>
+            <td style="color: white; background: red;">Working</td>
+        </ng-template>
+    </tr>
+</table>

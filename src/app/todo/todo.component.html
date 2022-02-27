@@ -1,0 +1,33 @@
+<style>
+    input[type="checkbox"]:checked+p {
+        background: green;
+    }
+</style>
+<!-- <p>{{todos|json}}</p> -->
+<input type="text" [(ngModel)]="hello">
+<p>
+    Your greeting: {{hello}}
+</p>
+<table border="1" width="100%">
+    <tr>
+        <th>UserId</th>
+        <th>TodoId</th>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let t of todos">
+        <td>{{t.userId}}</td>
+        <td>{{t.id}}</td>
+        <td>{{t.title}}</td>
+        <!-- <td>{{t.completed?"Done":"Working"}}</td> -->
+        <!-- <td *ngIf="t.completed; else view2" style="background:green; color: white;">Done</td>
+        <ng-template #view2>
+            <td style="background: red; color: white;">Working</td>
+        </ng-template> -->
+        <td>
+            <input type="checkbox" name="status" [checked]="t.completed">
+            <p>Done</p>
+        </td>
+    </tr>
+</table>
+<h4 *ngIf="errMsg" style="color: red; text-align: center;">{{errMsg}}</h4>

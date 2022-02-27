@@ -1,0 +1,14 @@
+.text-success{
+    color: green;
+}
+.text-danger{
+    color: red;
+}
+.text-normal{}
+.text-italic{
+    font-style: italic;
+}
+.h1{
+    font-size: 2rem;
+    font-weight: bold;
+}

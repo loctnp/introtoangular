@@ -1,0 +1,100 @@
+<!-- <p>toolbar works!</p>
+<h3 style="color: saddlebrown;">Hello {{framework}}</h3> -->
+
+<!-- <h4>Uppercase: {{framework | uppercase}}</h4>
+<button (click)="myFunction()">Change framework</button> -->
+
+<!-- <label >Enter your name:
+    <input type="text" [value]="name">
+</label><br>
+
+<label >Enter your name:
+    <input type="text" value="{{name}}">
+</label>
+
+<div class="button-group">
+    <button [disabled]="isDisable">Click me</button>
+    <button (click)="changeProperty()">Change status</button>
+</div> -->
+
+<!-- <div class="text-success">Sample text</div>
+<div class="{{success}}">Sample text</div>
+<div [class]="success">Sample text</div>
+<div [class.text-danger]="true">Sample text</div>
+
+<div class="{{danger}} h1">Sample text</div>
+<div class="{{success}} {{danger}}">Sample text</div>
+<div class="{{danger}} {{success}}">Sample text</div>
+
+<div [class]="myHeader">Multi Class</div> -->
+
+<!-- <div style="color:red">Welcome to UEL</div>
+<div style="{{blueHeader}}">Welcome to UEL</div>
+<div [style.color]="isErr? 'red' : 'green'">Welcome to UEL</div>
+<div>Welcome to UEL</div> -->
+
+<!-- <label>Enter your name: <input type="text" [(ngModel)]="name"></label>
+<p>Your name: {{name}}</p>
+<button (click)="setDefault()">Set default</button> -->
+
+<!-- <button (click)="showMe()">Show/Hide</button>
+<p *ngIf="show; else view2">You just make me show up</p>
+<ng-template #view2>
+    <p style="color: red; font-style: italic;">View 2</p>
+</ng-template>
+<p>The other way to write this logic</p>
+<div *ngIf="show; then view1; else view2"></div>
+<ng-template #view1>
+    <p>You just make me show up</p>
+</ng-template> -->
+
+<!-- 
+<label>
+    <input type="radio" name="" id="" [(ngModel)]="framework" value="">
+    <input type="radio" name="framework" [(ngModel)]="framework" id="" value="angular">
+    Angular
+</label>
+<label>
+    <input type="radio" name="framework" [(ngModel)]="framework" id="" value="reactjs">
+    ReactJs
+</label>
+<label>
+    <input type="radio" name="framework" [(ngModel)]="framework" id="" value="vuejs">
+    VueJs
+</label> -->
+<!-- <div [ngSwitch]="framework">
+    <p *ngSwitchCase="'angular'">Angular framework</p>
+    <p *ngSwitchCase="'reactjs'">ReactJS framework</p>
+    <p *ngSwitchCase="'vuejs'">VueJS framework</p>
+    <p *ngSwitchDefault="">...</p>
+</div> -->
+
+<!-- 
+<button (click)="showMe()">Show/Hide</button>
+<!-- <div *ngIf="show">View 1</div> -->
+<!-- <div *ngIf="show;else view2">
+    <p>View 1</p>
+</div>
+<ng-template #view2>
+    <p style="color: red;">View 2</p>
+</ng-template> -->
+<p>Some frameworks</p>
+<ul style="list-style: none;">
+    <li *ngFor="let f of frameworks; index as i; last as l; odd as o; even as e">
+        <label>
+            <input type="radio" name="framework" [(ngModel)]="models" [value]="f.toLowerCase()">
+            {{i+". "+f}} - {{l}} - odd: {{o}} - even: {{e}}
+        </label>
+    </li>
+</ul>
+<div [ngSwitch]="models">
+    <p *ngSwitchCase="'angular'">You are using <b>Angular</b></p>
+    <p *ngSwitchCase="'vuejs'">You are using <b>VueJS</b></p>
+    <p *ngSwitchCase="'reactjs'">You are using <b>ReactJS</b></p>
+    <p *ngSwitchCase="'nodejs'">You are using <b>NodeJs</b></p>
+</div>
+<p>
+    Crawling data from parents:
+</p>
+<h4 style="color: seagreen;">{{anotherName | json}}</h4>
+<button (click)="sendData()">Send Data</button>
